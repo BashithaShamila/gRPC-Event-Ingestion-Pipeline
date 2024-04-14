@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package event;
+
+// Service definition.
+service EventService {
+  // Client-to-server streaming RPC.
+  // Client sends a stream of events, the server replies with a summary.
+  rpc StreamEvents(stream Event) returns (StreamSummary);
+}
+
+// Event message structure.
+message Event {
+  string event_id = 1;
+  string type = 2;  // "user_login", "page_view"
+  int64 timestamp = 3;
+}
+
+// Summary response from the server.
+message StreamSummary {
+  bool success = 1;
+  int32 events_received = 2;
+}
