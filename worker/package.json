@@ -1,0 +1,12 @@
+{
+  "name": "event-worker",
+  "version": "1.0.0",
+  "description": "Redis Event Worker/Processor",
+  "main": "worker.js",
+  "scripts": {
+    "start": "node worker.js"
+  },
+  "dependencies": {
+    "redis": "^4.6.7"
+  }
+}
